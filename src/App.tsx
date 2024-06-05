@@ -12,6 +12,7 @@ import routerBindings, {
 } from "@refinedev/react-router-v6";
 import { App as AntdApp } from "antd";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { ForgotPassword, Home, Login, Register } from "./pages";
 
 function App() {
   return (
@@ -34,8 +35,12 @@ function App() {
                   liveMode: "auto",
                 }}
               >
-                <Routes>
-                  <Route index element={<WelcomePage />} />
+              <Routes>
+                <Route index element={<WelcomePage />} />
+                <Route index element={<Home />} />
+                <Route path="login" element={<Login />} />
+                <Route path="register" element={<Register />} />
+                <Route path="forgot-password" element={<ForgotPassword />} />
                 </Routes>
                 <RefineKbar />
                 <UnsavedChangesNotifier />
